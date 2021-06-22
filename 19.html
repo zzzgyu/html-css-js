@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="js/jquery-1.11.0.min.js"></script>
+</head>
+<style>
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+  }
+
+  .container {
+    margin: 0 auto;
+    height: 500px;
+    background-color: red;
+  }
+
+  .wrap {
+    height: 500px;
+    width: 800px;
+    margin: 0 auto;
+    background-color: #e8e8e8;
+    overflow: hidden;
+  }
+
+  .imgwrap {
+    width: 5000px;
+    height: 500px;
+  }
+
+  .box1 {
+    width: 800px;
+    height: 500px;
+    background-color: #2fa8ec;
+    float: left;
+
+  }
+
+  .box2 {
+    width: 800px;
+    height: 500px;
+    background-color: blue;
+    float: left;
+  }
+
+  .box3 {
+    width: 800px;
+    height: 500px;
+    background-color: green;
+    float: left;
+
+  }
+</style>
+<body>
+<div class="container">
+  <div class="wrap">
+    <div class="imgwrap">
+      <div class="box1">One</div>
+      <div class="box2">two</div>
+      <div class="box3">three</div>
+    </div>
+  </div>
+</div>
+<script>
+$(function () {
+  $('.container').mouseenter(function () {
+    $('.box1').animate({ width: '0' }, 3000, function () {
+      $('.box1').css('display', 'none')
+    })
+    setTimeout(function () {
+      $('.box2').animate({ width: '0', display: 'none' }, 3000, function () {
+
+        $('.box2').css('display', 'none')
+      })
+    }, 3000)
+  })
+  setTimeout(function () {
+    $('.box3').animate({ width: '0', display: 'none' }, 3000, function () {
+      $('.box3').css('display', 'none')
+
+    })
+  }, 6000)
+})
+</script>
+
+</body>
+</html>
